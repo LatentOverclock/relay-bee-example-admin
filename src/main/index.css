@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #e6edf3;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}

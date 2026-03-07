@@ -1,48 +1,107 @@
-body {
-  margin: 0;
-  background: #0b1020;
-  color: #e6edf3;
-  font-family: Inter, system-ui, sans-serif;
+.shell {
+  display: flex;
+  min-height: 100vh;
 }
 
-a {
-  color: #7dd3fc;
+.shell-sidebar {
+  width: 250px;
+  flex-shrink: 0;
 }
 
-.page {
-  max-width: 980px;
-  margin: 0 auto;
+.shell-content {
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.content-inner {
   padding: 24px;
+}
+
+.sidebar {
+  background: #0e7490;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-brand {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-link {
+  display: block;
+  color: #cffafe;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.sidebar-link.active,
+.sidebar-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+}
+
+.sidebar-logout {
+  margin-top: auto;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 .panel {
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 16px;
-  margin: 16px 0;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.stat-card {
-  background: rgba(125, 211, 252, 0.09);
-  border: 1px solid rgba(125, 211, 252, 0.25);
-  border-radius: 10px;
-  padding: 12px;
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.stat-card p {
-  margin: 0;
-  opacity: 0.85;
+.crud-table th,
+.crud-table td {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 6px;
+  text-align: left;
 }
 
-.stat-card strong {
-  font-size: 24px;
+.action-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.danger-link {
+  border: none;
+  background: transparent;
+  color: #fca5a5;
+  padding: 0;
 }
 
 .form-grid {
@@ -55,7 +114,8 @@ a {
   gap: 6px;
 }
 
-.form-grid input {
+.form-grid input,
+.form-grid select {
   background: #0c1228;
   color: #e6edf3;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -63,66 +123,16 @@ a {
   padding: 10px;
 }
 
-button {
-  cursor: pointer;
-  border: 1px solid rgba(125, 211, 252, 0.5);
-  background: rgba(125, 211, 252, 0.2);
-  color: #e6edf3;
-  border-radius: 8px;
-  padding: 8px 12px;
-}
-
-.link-button {
-  border: none;
-  background: transparent;
-  color: #7dd3fc;
-  padding: 0;
-}
-
-.ticket-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.login-page {
+  min-height: 100vh;
   display: grid;
-  gap: 10px;
+  place-items: center;
 }
 
-.ticket-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.ticket-title {
-  margin: 0;
-  font-weight: 600;
-}
-
-.ticket-subtitle {
-  margin: 4px 0 0;
-  opacity: 0.8;
-}
-
-.badge {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-new {
-  border-color: rgba(250, 204, 21, 0.5);
-  background: rgba(250, 204, 21, 0.15);
-}
-
-.badge-progress {
-  border-color: rgba(56, 189, 248, 0.5);
-  background: rgba(56, 189, 248, 0.15);
-}
-
-.badge-done {
-  border-color: rgba(52, 211, 153, 0.5);
-  background: rgba(52, 211, 153, 0.15);
+.login-panel {
+  width: min(420px, 90vw);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 18px;
 }

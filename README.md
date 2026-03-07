@@ -1,24 +1,47 @@
 # relay-bee-example-admin
 
-Public example showing how to wire an admin frontend with [`relay-bee`](https://github.com/timble-one/relay-bee).
+Public example admin UI using [`relay-bee`](https://github.com/timble-one/relay-bee), aligned with the module/file-structure style used in real relay-bee admin projects.
 
-This project is derived from implementation patterns used in private admin projects (`flexirent-admin`, `oad-admin`) and now includes a usable demo flow.
+## What this now demonstrates
 
-## What this demonstrates
+- relay-bee runtime wiring (`EnvironmentProvider`, `PeerRelayEnvironmentProvider`, Found router)
+- admin shell with sidebar navigation + protected layout
+- entity-style module structure under `src/app/<entity>/`
+- route composition via route hooks (`useHomeRoute`, `useTicketRoutes`)
+- CRUD-style flow for `ticket` entities
 
-- `EnvironmentContext` setup for endpoint/base-path values
-- `PeerRelayEnvironmentProvider` + `react-relay` provider wiring
-- Found router integration via `createRouteConfig` + `PeerRouterProvider`
-- Login flow in two modes:
-  - **demo mode** (local-only, no backend)
-  - **real mode** (`relay-bee` `LoginForm`)
-- A small admin-style ticket dashboard (`/demo`) that works out of the box
+## File structure (key parts)
 
-## Stack
-
-- React + TypeScript + Vite
-- relay-bee
-- Relay Runtime + found/found-relay
+```text
+src/
+  app/
+    login/LoginPage.tsx
+    ticket/
+      Ticket.ts
+      TicketListPage.tsx
+      TicketPage.tsx
+      ticketStore.ts
+      useTicketRoutes.ts
+    HomePage.tsx
+    NavigationLayout.tsx
+    useHomeRoute.ts
+  components/
+    sidebar/
+      Sidebar.tsx
+      navigationElements.ts
+  environment/
+    EnvironmentProvider.tsx
+    RelayEnvProvider.tsx
+  main/
+    app/App.tsx
+    app/RouterWrapper.tsx
+    main.tsx
+    index.css
+    styles.css
+  routes/
+    RouterProvider.tsx
+    routes.tsx
+```
 
 ## Setup
 
@@ -30,20 +53,11 @@ npm run dev
 
 Open `http://localhost:5173`.
 
-## Demo mode (default)
+## Demo mode
 
-`.env.example` enables:
+By default (`VITE_DEMO_MODE=true`), login and ticket CRUD run locally so the example works without a backend.
 
-```bash
-VITE_DEMO_MODE=true
-```
-
-With demo mode enabled:
-- `/login` uses a local form and stores demo auth in localStorage
-- `/demo` provides a small ticket workflow (create + status cycle)
-- No backend is required
-
-## Real mode (with backend)
+## Real mode
 
 Set:
 
@@ -52,12 +66,10 @@ VITE_DEMO_MODE=false
 VITE_HTTP_ENDPOINT=https://your-api.example.com
 ```
 
-Then `/login` uses `relay-bee`'s `LoginForm` and backend auth flow.
+Then `/login` uses relay-bee `LoginForm`.
 
 ## Optional schema fetch for Relay
 
 ```bash
 npm run fetch-schema
 ```
-
-This writes `src/schema.graphql` from your backend endpoint.
