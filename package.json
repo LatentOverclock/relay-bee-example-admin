@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "relay": "relay-compiler",
-    "fetch-schema": "tsx src/util/fetchSchema.ts"
+    "relay": "relay-compiler"
   },
   "dependencies": {
     "farce": "^0.4.5",
@@ -38,8 +37,6 @@
     "typescript": "^5.6.2",
     "vite": "^6.0.1",
     "vite-plugin-relay": "^2.1.0",
-    "tsx": "^4.19.2",
-    "dotenv": "^16.4.7",
     "graphql": "^16.11.0"
   }
 }
