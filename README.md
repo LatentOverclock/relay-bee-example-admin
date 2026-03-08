@@ -57,5 +57,5 @@ Open `http://localhost:5173`.
 ## Notes
 
 - This project is intentionally **demo-only**.
-- Login is local and accepts any non-empty email/password.
+- Login is local and accepts any non-empty email/password (explicitly shown on the login screen).
 - Ticket data is stored in localStorage for quick exploration.

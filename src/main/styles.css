@@ -136,3 +136,10 @@
   border-radius: 12px;
   padding: 18px;
 }
+
+.login-hint {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #c7d8f8;
+  font-size: 0.95rem;
+}

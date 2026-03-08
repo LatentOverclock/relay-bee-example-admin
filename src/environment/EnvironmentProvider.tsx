@@ -7,7 +7,7 @@ export const EnvironmentProvider = ({ children }: { children: ReactNode }) => {
   const normalizedBaseUrl = stripped ? `/${stripped}` : ''
 
   const environment = {
-    httpEndpoint: import.meta.env.VITE_HTTP_ENDPOINT,
+    httpEndpoint: '',
     basePath: '/api',
     passwordPath: 'security.credentials.password',
     adminBasePath: normalizedBaseUrl,

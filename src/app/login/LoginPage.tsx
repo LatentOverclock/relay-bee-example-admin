@@ -19,6 +19,9 @@ export default function LoginPage() {
     <div className="login-page">
       <div className="login-panel">
         <h1>Sign in</h1>
+        <p className="login-hint">
+          Demo mode: you can enter any non-empty email and any non-empty password.
+        </p>
         <form className="form-grid" onSubmit={onDemoSubmit}>
           <label>
             Email
