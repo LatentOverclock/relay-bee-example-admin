@@ -7,7 +7,7 @@ export const useTicketRoutes = (): RouteObject => ({
   path: Ticket.handle,
   children: [
     {
-      path: '/',
+      path: '',
       Component: TicketListPage,
     },
     {
