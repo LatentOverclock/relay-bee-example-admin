@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { AddButton, Badge, Link, ListPage } from 'relay-bee'
+import { Badge, Link, ListPage } from 'relay-bee'
 import { Ticket } from './Ticket'
 import { deleteTicket, getTickets } from './ticketStore'
 
@@ -10,12 +10,7 @@ export default function TicketListPage() {
   return (
     <ListPage entityDescription={Ticket}>
       <section className="panel">
-        <div className="header-row">
-          <h2>Tickets</h2>
-          <Link to="/ticket/new">
-            <AddButton onClick={() => null} />
-          </Link>
-        </div>
+        <h2>Tickets</h2>
 
         <table className="crud-table">
           <thead>

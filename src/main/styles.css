@@ -66,10 +66,11 @@
 }
 
 .panel {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .header-row {
@@ -86,7 +87,7 @@
 
 .crud-table th,
 .crud-table td {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid #e5e7eb;
   padding: 10px 6px;
   text-align: left;
 }
@@ -100,7 +101,7 @@
 .danger-link {
   border: none;
   background: transparent;
-  color: #fca5a5;
+  color: #dc2626;
   padding: 0;
 }
 
@@ -116,9 +117,9 @@
 
 .form-grid input,
 .form-grid select {
-  background: #0c1228;
-  color: #e6edf3;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 10px;
 }
@@ -131,15 +132,22 @@
 
 .login-panel {
   width: min(420px, 90vw);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 18px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
 }
 
 .login-hint {
   margin-top: 0;
   margin-bottom: 12px;
-  color: #c7d8f8;
+  color: #4b5563;
   font-size: 0.95rem;
+}
+
+.route-loading {
+  display: grid;
+  place-items: center;
+  min-height: 35vh;
 }

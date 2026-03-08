@@ -5,6 +5,16 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [relay, react()],
   build: {
-    chunkSizeWarningLimit: 750,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return
+
+          if (id.includes('/node_modules/lexical/') || id.includes('/node_modules/@lexical/')) {
+            return 'vendor-lexical'
+          }
+        },
+      },
+    },
   },
 })

@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  background: #0b1020;
-  color: #e6edf3;
+  background: #f5f7fb;
+  color: #1f2937;
   font-family: Inter, system-ui, sans-serif;
 }
 
 a {
-  color: #7dd3fc;
+  color: #0b63ce;
   text-decoration: none;
 }
 
