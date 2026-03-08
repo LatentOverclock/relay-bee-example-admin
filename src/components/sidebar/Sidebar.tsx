@@ -4,15 +4,15 @@ import { clearDemoAuthenticated } from '../../util/demoAuth'
 
 export default function Sidebar() {
   const isActive = (to: string) => {
-    if (to === '/') {
+    if (!to) {
       return window.location.pathname === '/'
     }
-    return window.location.pathname.startsWith(to)
+    return window.location.pathname.startsWith(`/${to}`)
   }
 
   return (
     <aside className="sidebar">
-      <Link className="sidebar-brand" to="/">
+      <Link className="sidebar-brand" to="">
         relay-bee admin
       </Link>
 

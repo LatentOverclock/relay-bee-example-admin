@@ -1,10 +1,9 @@
 import { FormEvent, useState } from 'react'
-import { LoginForm, useRouter } from 'relay-bee'
+import { LoginForm } from 'relay-bee'
 import { isDemoMode } from '../../util/env'
 import { setDemoAuthenticated } from '../../util/demoAuth'
 
 export default function LoginPage() {
-  const { router } = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -15,7 +14,7 @@ export default function LoginPage() {
     }
 
     setDemoAuthenticated()
-    router.push('/')
+    window.location.assign('/')
   }
 
   return (
@@ -45,7 +44,7 @@ export default function LoginPage() {
             <button type="submit">Login (demo)</button>
           </form>
         ) : (
-          <LoginForm onSuccess={() => router.push('/')} />
+          <LoginForm onSuccess={() => window.location.assign('/')} />
         )}
       </div>
     </div>

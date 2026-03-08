@@ -1,5 +1,4 @@
 import { FormEvent, useMemo, useState } from 'react'
-import { useRouter } from 'relay-bee'
 import { createTicket, getTicket, updateTicket } from './ticketStore'
 import type { DemoTicketStatus } from './Ticket'
 
@@ -12,7 +11,6 @@ type Props = {
 }
 
 export default function TicketPage(props: Props) {
-  const { router } = useRouter()
   const id = props.match?.params?.id
   const existing = useMemo(() => (id ? getTicket(id) : undefined), [id])
 
@@ -31,7 +29,7 @@ export default function TicketPage(props: Props) {
 
     if (!id) {
       const created = createTicket({ customer: trimmedCustomer, topic: trimmedTopic })
-      router.push(`/ticket/${created.id}`)
+      window.location.assign(`/ticket/${created.id}`)
       return
     }
 
@@ -41,7 +39,7 @@ export default function TicketPage(props: Props) {
       status,
     })
 
-    router.push('/ticket')
+    window.location.assign('/ticket')
   }
 
   return (
@@ -70,7 +68,7 @@ export default function TicketPage(props: Props) {
 
         <div className="action-row">
           <button type="submit">Save</button>
-          <button type="button" onClick={() => router.push('/ticket')}>
+          <button type="button" onClick={() => window.location.assign('/ticket')}>
             Cancel
           </button>
         </div>

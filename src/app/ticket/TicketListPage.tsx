@@ -12,7 +12,7 @@ export default function TicketListPage() {
       <section className="panel">
         <div className="header-row">
           <h2>Tickets</h2>
-          <Link to="/ticket/new">
+          <Link to="new">
             <AddButton onClick={() => null} />
           </Link>
         </div>
@@ -30,7 +30,7 @@ export default function TicketListPage() {
             {tickets.map((ticket) => (
               <tr key={ticket.id}>
                 <td>
-                  <Link to={`/ticket/${ticket.id}`}>{ticket.topic}</Link>
+                  <Link to={ticket.id}>{ticket.topic}</Link>
                 </td>
                 <td>{ticket.customer}</td>
                 <td>
@@ -38,7 +38,7 @@ export default function TicketListPage() {
                 </td>
                 <td>
                   <div className="action-row">
-                    <Link to={`/ticket/${ticket.id}`}>Edit</Link>
+                    <Link to={ticket.id}>Edit</Link>
                     <button
                       className="danger-link"
                       onClick={() => {
